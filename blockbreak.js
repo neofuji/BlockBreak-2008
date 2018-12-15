@@ -702,7 +702,7 @@ eval(unescape(COOKIE));
 //ｾｰﾌﾞ-------------------------------------------
 
 function save() {
-document.cookie="BLOCKBREAK="+escape("SCORE="+SCORE+";BALLS="+BALLS+";CLEAR="+CLEAR+";")+"; expires=Thu, 1-Jan-2030 00:00:00 GMT; domain=.github.io; path=/;";
+document.cookie="BLOCKBREAK="+escape("SCORE="+SCORE+";BALLS="+BALLS+";CLEAR="+CLEAR+";");
 }
 
 function pause() {
