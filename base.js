@@ -14,63 +14,63 @@ var MST;
 
 var MDOWN=false;
 
-//Ò¯¾°¼Ş‚ğ—¬‚·ˆ—-------------------------------
+//ï¾’ï½¯ï½¾ï½°ï½¼ï¾ã‚’æµã™å‡¦ç†-------------------------------
 
 function msgscroll(MESSAGE) {
 
-//‘O‚ÌÀ²Ï°‚ğ~‚ß‚é
+//å‰ã®ï¾€ï½²ï¾ï½°ã‚’æ­¢ã‚ã‚‹
 clearInterval(MST);
 
-//½Ã°À½ÊŞ°‚ğ‹ó‚É‚·‚é
+//ï½½ï¾ƒï½°ï¾€ï½½ï¾Šï¾ï½°ã‚’ç©ºã«ã™ã‚‹
 status='';
 
-//ˆø”‚ª‹ó‚Ìê‡Aˆ—‚ğ’â~‚·‚é
+//å¼•æ•°ãŒç©ºã®å ´åˆã€å‡¦ç†ã‚’åœæ­¢ã™ã‚‹
 if (!MESSAGE) return false;
 
-//•Ï”‚Éˆø”‚ğ¾¯Ä‚·‚é
+//å¤‰æ•°ã«å¼•æ•°ã‚’ï½¾ï½¯ï¾„ã™ã‚‹
 MSG = MESSAGE;
 
-//À²Ï°‚Å 0.2•b‚²‚Æ‚Éˆ—‚ğÀs‚·‚é
+//ï¾€ï½²ï¾ï½°ã§ 0.2ç§’ã”ã¨ã«å‡¦ç†ã‚’å®Ÿè¡Œã™ã‚‹
 MST = setInterval('status=MSG; MSG=MSG.substring(1,MSG.length)+MSG.substring(0,1)',200);
 
 return true;
 
 }
-//Ú²Ô•\¦/”ñ•\¦-----------------------------------
+//ï¾šï½²ï¾”è¡¨ç¤º/éè¡¨ç¤º-----------------------------------
 
 function visibility(NAME,FLAG) {
 
 if (FLAG) document.getElementById(NAME).style.visibility = 'visible';
 else document.getElementById(NAME).style.visibility = 'hidden';
 }
-//Ú²Ô‚ÌˆÊ’uw’è------------------------------------
+//ï¾šï½²ï¾”ã®ä½ç½®æŒ‡å®š------------------------------------
 
 function setxy(NAME,X,Y) {
 
 document.getElementById(NAME).style.left= X+'px';
 document.getElementById(NAME).style.top = Y+'px';
 }
-//Ú²Ô‚ÌÀ•Wæ“¾------------------------------------
+//ï¾šï½²ï¾”ã®åº§æ¨™å–å¾—------------------------------------
 
-// ¶
+// å·¦
 function getx(NAME) {
 
 return parseInt(document.getElementById(NAME).style.left);
 }
 
-// ã
+// ä¸Š
 function gety(NAME) {
 
 return parseInt(document.getElementById(NAME).style.top);
 }
-//‰¹ŠyÄ¶---------------------------------------
+//éŸ³æ¥½å†ç”Ÿ---------------------------------------
 
 function musicplay(OBJ,F) {
 
 //if(F) {document.getElementById(OBJ).play(); NOWM=OBJ;}
 //else document.getElementById(OBJ).play();
 }
-//‰¹Šy’â~---------------------------------------
+//éŸ³æ¥½åœæ­¢---------------------------------------
 
 function musicstop() {
 
@@ -78,7 +78,7 @@ function musicstop() {
 }
 
 onbeforeunload=function() {
-return '‚±‚±‚Å‚â‚ß‚é‚ÆƒZ[ƒu‚³‚ê‚Ü‚¹‚ñ';
+return 'ã“ã“ã§ã‚„ã‚ã‚‹ã¨ã‚»ãƒ¼ãƒ–ã•ã‚Œã¾ã›ã‚“';
 }
 
 document.onmousemove=function(evt) {
@@ -108,11 +108,11 @@ document.onkeydown = function(event) {
 KEYCODE = event.keyCode;
 CTRL = event.ctrlKey;
 SHIFT = event.shiftKey;
-// ²ÍŞİÄ‚ÌãˆÊ“`”d‚ğ–h~
+// ï½²ï¾ï¾ï¾ï¾„ã®ä¸Šä½ä¼æ’­ã‚’é˜²æ­¢
 //event.returnValue = false;
 event.cancelBubble = true;
 
-// ·°º°ÄŞ‚Ì•¶š‚ğæ“¾
+// ï½·ï½°ï½ºï½°ï¾„ï¾ã®æ–‡å­—ã‚’å–å¾—
 KEYCHAR = String.fromCharCode(KEYCODE).toUpperCase();
 }
 document.onkeyup = function() {
@@ -122,7 +122,7 @@ KEYCHAR='';
 CTRL=false;
 SHIFT=false;
 }
-/* “Áê·°º°ÄŞ‚Ì‘Î‰
+/* ç‰¹æ®Šï½·ï½°ï½ºï½°ï¾„ï¾ã®å¯¾å¿œ
 27 Esc
 8 BS
 9 Tab
@@ -133,8 +133,8 @@ SHIFT=false;
 36 Home
 33 PageUp
 34 PageDown
-38 ª
-40 «
-37 ©
-39 ¨
+38 â†‘
+40 â†“
+37 â†
+39 â†’
 */

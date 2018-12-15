@@ -1,5 +1,5 @@
 
-var SCORE=0;	//½º±
+var SCORE=0;	//ï½½ï½ºï½±
 
 var CLEAR=-1;
 
@@ -16,39 +16,39 @@ var PATH ='img/blockbreak/';
 
 var KEYF=false;
 
-var COMBO=0;	//ºİÎŞ”
+var COMBO=0;	//ï½ºï¾ï¾ï¾æ•°
 
-/*ÎŞ°Å½*/
+/*ï¾ï¾ï½°ï¾…ï½½*/
 
-var BONUS=0;	//ÎŞ°Å½“_
+var BONUS=0;	//ï¾ï¾ï½°ï¾…ï½½ç‚¹
 
-var BALLS =3;	//ÎŞ°Ù”
-var MCOMBO=0;	//Å‘åºİÎŞ”
+var BALLS =3;	//ï¾ï¾ï½°ï¾™æ•°
+var MCOMBO=0;	//æœ€å¤§ï½ºï¾ï¾ï¾æ•°
 
-var SPEEDX=10; var SPEEDY=10;	//ÎŞ°Ù‚Ì½Ëß°ÄŞ
+var SPEEDX=10; var SPEEDY=10;	//ï¾ï¾ï½°ï¾™ã®ï½½ï¾‹ï¾Ÿï½°ï¾„ï¾
 
-var BLOCKS=0;	//ÌŞÛ¯¸‘”
+var BLOCKS=0;	//ï¾Œï¾ï¾›ï½¯ï½¸ç·æ•°
 var BREAK = new Array();
 
-var T_MIN=0; var T_SEC=0;	//À²Ñ
+var T_MIN=0; var T_SEC=0;	//ï¾€ï½²ï¾‘
 
-var SET=new Array();	//‰Šúİ’èî•ñ(true or false)
-SET[0] =false;	//µ°Ä¾°ÌŞ
-SET[1] =true;	//ºİÄÛ°×()
+var SET=new Array();	//åˆæœŸè¨­å®šæƒ…å ±(true or false)
+SET[0] =false;	//ï½µï½°ï¾„ï½¾ï½°ï¾Œï¾
+SET[1] =true;	//ï½ºï¾ï¾„ï¾›ï½°ï¾—()
 SET[2] =true;	//BGM
 
-var STAGE=0;	//Œ»½Ã°¼Ş
+var STAGE=0;	//ç¾ï½½ï¾ƒï½°ï½¼ï¾
 
-var CLIST=new Array();	//Á¬Úİ¼Şî•ñ
+var CLIST=new Array();	//ï¾ï½¬ï¾šï¾ï½¼ï¾æƒ…å ±
 
-//“K“–‚É—ñ‹L
-CLIST[0]='ƒ{[ƒ‹ƒƒX‚È‚µ‚ÅƒNƒŠƒA‚µ‚æ‚¤B';
-CLIST[1]='‚P•ªˆÈ“à‚ÉƒNƒŠƒA‚µ‚æ‚¤B';
-CLIST[2]='ƒAƒCƒeƒ€‚ğ‘S•”æ‚ë‚¤B';
+//é©å½“ã«åˆ—è¨˜
+CLIST[0]='ãƒœãƒ¼ãƒ«ãƒ­ã‚¹ãªã—ã§ã‚¯ãƒªã‚¢ã—ã‚ˆã†ã€‚';
+CLIST[1]='ï¼‘åˆ†ä»¥å†…ã«ã‚¯ãƒªã‚¢ã—ã‚ˆã†ã€‚';
+CLIST[2]='ã‚¢ã‚¤ãƒ†ãƒ ã‚’å…¨éƒ¨å–ã‚ã†ã€‚';
 
-var STAFF=new Array();	//½À¯ÌÛ°Ùî•ñ
+var STAFF=new Array();	//ï½½ï¾€ï½¯ï¾Œï¾›ï½°ï¾™æƒ…å ±
 
-//•\¦‚·‚é‡‚É—ñ‹L
+//è¡¨ç¤ºã™ã‚‹é †ã«åˆ—è¨˜
 STAFF[0]='<h2>Director</h2>Higuruma Toru';
 STAFF[1]='<h2>Game design</h2>Higuruma Toru<h2>Program</h2>Higuruma Toru<br />(Support:I.H.)';
 STAFF[2]='<h2>Graphic</h2>Higuruma Toru<h2>Music</h2>I.H. etc...';
@@ -57,19 +57,19 @@ STAFF[4]='<h2>Producer</h2>Higuruma Toru<h2>Executive producer</h2>Higuruma Toru
 STAFF[5]='<h2>Thank you for playing!</h2>';
 
 /*
-‰¡10—ñ
-c 8’i
+æ¨ª10åˆ—
+ç¸¦ 8æ®µ
 
-0:–³‚µ
-1:Ô
-2:—Î
-3:Â
-4:‰©
-5:‰ó‚¹‚È‚¢
-6:ÎŞÑ
+0:ç„¡ã—
+1:èµ¤
+2:ç·‘
+3:é’
+4:é»„
+5:å£Šã›ãªã„
+6:ï¾ï¾ï¾‘
 */
 
-var BLOCK=new Array();	//ÌŞÛ¯¸”z’uî•ñ ½Ã°¼Ş‡‚É—ñ‹L‚·‚é
+var BLOCK=new Array();	//ï¾Œï¾ï¾›ï½¯ï½¸é…ç½®æƒ…å ± ï½½ï¾ƒï½°ï½¼ï¾é †ã«åˆ—è¨˜ã™ã‚‹
 BLOCK[0]='0000000000'+
          '0111122220'+
          '0333344440';
@@ -91,7 +91,7 @@ BLOCK[3]='1111111111'+
 //2P
 BLOCK[-1]='000000000';
 
-var SBGM=new Array();	//Stage BGM ½Ã°¼Ş‡‚É—ñ‹L‚·‚é
+var SBGM=new Array();	//Stage BGM ï½½ï¾ƒï½°ï½¼ï¾é †ã«åˆ—è¨˜ã™ã‚‹
 
 SBGM[0]='dbgm2';
 SBGM[1]='dbgm4';
@@ -142,26 +142,26 @@ IMG[12].src=PATH+'blockbm.gif';
 IMG[13]=new Image(64,64);
 IMG[13].src=PATH+'bomb.gif';
 
-//ÒÆ­°•\¦‚Ì€”õ---------------------------------
+//ï¾’ï¾†ï½­ï½°è¡¨ç¤ºã®æº–å‚™---------------------------------
 
 function menusetup() {
 
-document.getElementById('game').innerHTML='<p><img alt="ƒuƒƒbƒN•ö‚µ" height="100" src="img/blockbreak/logo.gif" width="400" /></p><div id="menu">Now Loading....</div>';
+document.getElementById('game').innerHTML='<p><img alt="ãƒ–ãƒ­ãƒƒã‚¯å´©ã—" height="100" src="img/blockbreak/logo.gif" width="400" /></p><div id="menu">Now Loading....</div>';
 mainmenu();
 }
 
-//Ò²İÒÆ­°----------------------------------------
+//ï¾’ï½²ï¾ï¾’ï¾†ï½­ï½°----------------------------------------
 
 function mainmenu() {
 
-msgscroll('@@@@@@@@@@ƒ‚[ƒh‚ğ‘I‚ñ‚Å‰º‚³‚¢');
+msgscroll('ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ãƒ¢ãƒ¼ãƒ‰ã‚’é¸ã‚“ã§ä¸‹ã•ã„');
 
 with(document.getElementById('menu')) {
 
 innerHTML ='<h1>-MAINMENU-</h1>';
 
-innerHTML+='<a href="#" onclick="clearInterval(KCT); menu_1p(); return false"><img alt="1P GAME" height="60" src="img/blockbreak/mm_1pgame.jpg" width="240" /></a>@<a href="#" onclick="/*clearInterval(KCT); menu_2p();*/ return false"><img alt="2P GAME" height="60" src="img/blockbreak/mm_2pgame.jpg" width="240" /></a><br />';
-innerHTML+='<a href="#" onclick="/*clearInterval(KCT); hiscore();*/ return false"><img alt="HIGHSCORES" height="30" src="img/blockbreak/mm_hiscore.jpg" width="180" /></a>@@@<a href="#" onclick="/*clearInterval(KCT); option();*/ return false"><img alt="OPTION" height="30" src="img/blockbreak/mm_option.jpg" title="ƒQ[ƒ€‚Ìİ’è‚ğ‚µ‚Ü‚·" width="180" /></a><br />';
+innerHTML+='<a href="#" onclick="clearInterval(KCT); menu_1p(); return false"><img alt="1P GAME" height="60" src="img/blockbreak/mm_1pgame.jpg" width="240" /></a>ã€€<a href="#" onclick="/*clearInterval(KCT); menu_2p();*/ return false"><img alt="2P GAME" height="60" src="img/blockbreak/mm_2pgame.jpg" width="240" /></a><br />';
+innerHTML+='<a href="#" onclick="/*clearInterval(KCT); hiscore();*/ return false"><img alt="HIGHSCORES" height="30" src="img/blockbreak/mm_hiscore.jpg" width="180" /></a>ã€€ã€€ã€€<a href="#" onclick="/*clearInterval(KCT); option();*/ return false"><img alt="OPTION" height="30" src="img/blockbreak/mm_option.jpg" title="ã‚²ãƒ¼ãƒ ã®è¨­å®šã‚’ã—ã¾ã™" width="180" /></a><br />';
 }
 KCT=setInterval(function(){
 if(KEYCHAR=='S'){clearInterval(KCT); menu_1p();}
@@ -172,7 +172,7 @@ if(KEYCHAR=='S'){clearInterval(KCT); menu_1p();}
 musicstop();
 musicplay('dbgm3',1);
 }
-//‰Šú‰»ˆ—-------------------------------------
+//åˆæœŸåŒ–å‡¦ç†-------------------------------------
 
 function gamesetup() {
 
@@ -207,7 +207,7 @@ musicstop();
 musicplay(SBGM[STAGE],1);
 }
 
-//ÌŞÛ¯¸•\¦
+//ï¾Œï¾ï¾›ï½¯ï½¸è¡¨ç¤º
 function putblock(GETSTAGE){
 
 var BTYPE;
@@ -232,9 +232,9 @@ BLOCKS++;
 
 }
 
-//ŠeÓ°ÄŞˆ—-------------------------------------
+//å„ï¾“ï½°ï¾„ï¾å‡¦ç†-------------------------------------
 
-//Ò²İÓ°ÄŞ
+//ï¾’ï½²ï¾ï¾“ï½°ï¾„ï¾
 function menu_1p() {
 
 msgscroll();
@@ -290,7 +290,7 @@ innerHTML='<h1>-2PBATTLE-</h1>';
 
 innerHTML+='<h2>RULESELECT</h2>';
 
-innerHTML+='<button onclick="menu_2p_time()" onmouseover="comment.value=\'Œˆ‚ß‚ç‚ê‚½ŠÔ“à‚Å“¾“_‚ğ‰Ò‚°I\'" onmouseout="comment.value=\'\'">TIME&nbsp;</button><button onmouseover="comment.value=\'Œˆ‚ß‚ç‚ê‚½“¾“_‚ğææ‚µ‚ÄŸ—˜I\'" onmouseout="comment.value=\'\'">SCORE</button><button onmouseover="comment.value=\'ƒ{[ƒ‹‚Ì—‚Æ‚µ‡‚¢I\'" onmouseout="comment.value=\'\'">BALL&nbsp;</button><br /><button onmouseover="comment.value=\'ƒ{[ƒ‹‚ğ—‚Æ‚µ‚½‚ç‘¦•‰‚¯!‰ß“!\'" onmouseout="comment.value=\'\'">SUDDEN DEATH</button><br />';
+innerHTML+='<button onclick="menu_2p_time()" onmouseover="comment.value=\'æ±ºã‚ã‚‰ã‚ŒãŸæ™‚é–“å†…ã§å¾—ç‚¹ã‚’ç¨¼ã’ï¼\'" onmouseout="comment.value=\'\'">TIME&nbsp;</button><button onmouseover="comment.value=\'æ±ºã‚ã‚‰ã‚ŒãŸå¾—ç‚¹ã‚’å…ˆå–ã—ã¦å‹åˆ©ï¼\'" onmouseout="comment.value=\'\'">SCORE</button><button onmouseover="comment.value=\'ãƒœãƒ¼ãƒ«ã®è½ã¨ã—åˆã„ï¼\'" onmouseout="comment.value=\'\'">BALL&nbsp;</button><br /><button onmouseover="comment.value=\'ãƒœãƒ¼ãƒ«ã‚’è½ã¨ã—ãŸã‚‰å³è² ã‘!éé…·!\'" onmouseout="comment.value=\'\'">SUDDEN DEATH</button><br />';
 
 innerHTML+='<input name="comment" readonly="readonly" size="30" style="border-color: #fff;" />';
 
@@ -358,16 +358,16 @@ musicplay(SBGM[STAGE],1);
 
 }
 
-//»ÌŞÓ°ÄŞ
+//ï½»ï¾Œï¾ï¾“ï½°ï¾„ï¾
 function hiscore() {
 
-msgscroll('@@@@@@@@@@€–Ú‚ğ‘I‚ñ‚Å‰º‚³‚¢B');
+msgscroll('ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€é …ç›®ã‚’é¸ã‚“ã§ä¸‹ã•ã„ã€‚');
 
 with(document.getElementById('menu')) {
 
 innerHTML='<h1>-HISCORES-</h1>';
 
-innerHTML+='<form><table align="center" height="200" id="hsspace" style="background:#ccc;" width="400"><tr align="center" valign="middle"><td><select name="hssel" onchange="hiscore_disp()" size="13"><option>SCORE</option><option>TIME</option><option>BALL</option></select><span id="hsbox" style="background:#fff; height:190px; width:300px;">‰¡‚ÌƒŠƒXƒg‚©‚ç‘I‘ğ‚µ‚Ä‰º‚³‚¢B</span></td></tr></table></form>';
+innerHTML+='<form><table align="center" height="200" id="hsspace" style="background:#ccc;" width="400"><tr align="center" valign="middle"><td><select name="hssel" onchange="hiscore_disp()" size="13"><option>SCORE</option><option>TIME</option><option>BALL</option></select><span id="hsbox" style="background:#fff; height:190px; width:300px;">æ¨ªã®ãƒªã‚¹ãƒˆã‹ã‚‰é¸æŠã—ã¦ä¸‹ã•ã„ã€‚</span></td></tr></table></form>';
 
 innerHTML+='<hr /><a href="#" onclick="mainmenu(); return false"><img alt="Top" height="28px" src="img/button/top.gif" width="140px" /></a>';
 }
@@ -378,7 +378,7 @@ musicstop();
 musicplay('dbgm1',1);
 }
 
-//•\¦
+//è¡¨ç¤º
 function hiscore_disp() {
 
 with(document.getElementById('hsbox')){
@@ -403,7 +403,7 @@ innerHTML+='<hr /><a href="#" onclick="mainmenu(); return false"><img alt="Top" 
 KCT=setInterval("if(KEYCHAR=='Z'){clearInterval(KCT); mainmenu();}",50);
 musicstop();
 }
-//Êß¯ÄŞˆÚ“®--------------------------------------
+//ï¾Šï¾Ÿï½¯ï¾„ï¾ç§»å‹•--------------------------------------
 
 function padmove() {
 
@@ -428,7 +428,7 @@ else setxy('ball',getx('pad1')+60,370);
 if(BLOCKS<1) sclear();
 document.getElementById('1Pscore').innerHTML=(SCORE<1000000000?'0':'')+(SCORE<100000000?'0':'')+(SCORE<10000000?'0':'')+(SCORE<1000000?'0':'')+(SCORE<100000?'0':'')+(SCORE<10000?'0':'')+(SCORE<1000?'0':'')+(SCORE<100?'0':'')+(SCORE<10?'0':'')+SCORE;
 }
-//ÎŞ°ÙˆÚ“®---------------------------------------
+//ï¾ï¾ï½°ï¾™ç§»å‹•---------------------------------------
 
 function ballmove(OBJ) {
 
@@ -436,21 +436,21 @@ HF=true;
 
 setxy(OBJ,getx(OBJ)+SPEEDX,gety(OBJ)+SPEEDY);
 
-//‰¡‚Ì•Ç‚Ì“–‚è”»’è
+//æ¨ªã®å£ã®å½“ã‚Šåˆ¤å®š
 if(getx(OBJ)<1) { SPEEDX = -SPEEDX; setxy(OBJ,0,gety(OBJ)); musicplay('se0'); }
 
 if (getx(OBJ)>=570) { SPEEDX = -SPEEDX; setxy(OBJ,570,gety(OBJ)); musicplay('se0'); }
 
-//ã‚Ì•Ç‚Ì“–‚è”»’è
+//ä¸Šã®å£ã®å½“ã‚Šåˆ¤å®š
 if(gety(OBJ)<1) { SPEEDY= -SPEEDY; setxy(OBJ,getx(OBJ),0); musicplay('se0'); }
 
-//Êß¯ÄŞ‚Ì“–‚è”»’è
+//ï¾Šï¾Ÿï½¯ï¾„ï¾ã®å½“ã‚Šåˆ¤å®š
 if(gety(OBJ)>=370 && getx('pad1')<getx(OBJ)+15 && getx('pad1')+150>getx(OBJ)+15) {
 
-//’µ‚Ë•Ô‚µ
+//è·³ã­è¿”ã—
 if ((getx(OBJ)+15<getx('pad1')+50 && SPEEDX>0) || (getx('pad1')+100<getx(OBJ)+15 && SPEEDX<0)) SPEEDX= -SPEEDX;
 
-//½Ëß°ÄŞ‚ğ‘«‚µ‚Ä’µ‚Ë•Ô‚·
+//ï½½ï¾‹ï¾Ÿï½°ï¾„ï¾ã‚’è¶³ã—ã¦è·³ã­è¿”ã™
 SPEEDY= -(++SPEEDY);
 
 if (SPEEDY<-30)SPEEDY=-30;
@@ -461,50 +461,50 @@ comboreset();
 musicplay('se0');
 }
 
-//ÌŞÛ¯¸‚Ì“–‚è”»’è
+//ï¾Œï¾ï¾›ï½¯ï½¸ã®å½“ã‚Šåˆ¤å®š
 for(A=0; A<BLOCK[STAGE].length; A++) {
 
-//ÎŞ°Ù‚ÉÌŞÛ¯¸‚ª“–‚Á‚Ä‚¢‚é‚©?
+//ï¾ï¾ï½°ï¾™ã«ï¾Œï¾ï¾›ï½¯ï½¸ãŒå½“ã£ã¦ã„ã‚‹ã‹?
 if(!(BREAK[A]>0 && getx(A)<getx(OBJ)+30 && getx(OBJ)<getx(A)+60 && gety(A)<gety(OBJ)+30 && gety(OBJ)<gety(A)+30)) continue;
 
-//‰ó‚¹‚È‚¢ÌŞÛ¯¸‚©?
+//å£Šã›ãªã„ï¾Œï¾ï¾›ï½¯ï½¸ã‹?
 if(BLOCK[STAGE].charAt(A)!=5 && BLOCK[STAGE].charAt(A)!=6) {
 
 bbreak(A);
 
-SCORE+=20;	//½º±
+SCORE+=20;	//ï½½ï½ºï½±
 combo();
 }//end if (BLOCK[STAGE].charAt(A) != 5)
 
 else if(BLOCK[STAGE].charAt(A)==6)bomb(A);
 else musicplay('se3');
 
-if(HF) { SPEEDY= -SPEEDY; HF=false; }	//’µ‚Ë•Ô‚·
+if(HF) { SPEEDY= -SPEEDY; HF=false; }	//è·³ã­è¿”ã™
 
 }//end for(A=0; A<BLOCK[STAGE].length; A++)
 if(gety(OBJ)>=420) balllost();
 }//end function
 
-//”j‰ó-------------------------------------------
+//ç ´å£Š-------------------------------------------
 
 function bbreak(OBJ){
 
-//‘¶İ‚·‚é‚©H
+//å­˜åœ¨ã™ã‚‹ã‹ï¼Ÿ
 if(BLOCK[STAGE].length<OBJ || BLOCK[STAGE].charAt(OBJ)=='0')return false;
 
-//‰ó‚¹‚é‰ñ”‚É’B‚µ‚½‚©H
+//å£Šã›ã‚‹å›æ•°ã«é”ã—ãŸã‹ï¼Ÿ
 if(--BREAK[OBJ]>0)return false;
 
-visibility(OBJ,0);	//”ñ•\¦
+visibility(OBJ,0);	//éè¡¨ç¤º
 
 if(BLOCK[STAGE].charAt(OBJ)!=5){
-BLOCKS--;	//ÌŞÛ¯¸”‚ğŒ¸‚ç‚·
+BLOCKS--;	//ï¾Œï¾ï¾›ï½¯ï½¸æ•°ã‚’æ¸›ã‚‰ã™
 
-musicplay('se1');	//”j‰ó‰¹
+musicplay('se1');	//ç ´å£ŠéŸ³
 }
 }
 
-//ÎŞÑ--------------------------------------------
+//ï¾ï¾ï¾‘--------------------------------------------
 
 function bomb(OBJ){
 
@@ -513,16 +513,16 @@ var LEFT=true;	var RIGHT=true;
 if(OBJ%10==0)LEFT=false;
 else if((OBJ+1)%10==0)RIGHT=false;
 
-//ã
+//ä¸Š
 if(OBJ-10>-1){
  if(BREAK[OBJ-10])bbreak(OBJ-10);
  if(LEFT && BREAK[OBJ-11]) bbreak(OBJ-11);
  if(RIGHT && BREAK[OBJ-9])bbreak(OBJ-9);
 }
-//‰¡
+//æ¨ª
 if(LEFT && BREAK[OBJ-1])bbreak(OBJ-1);
 if(RIGHT && BREAK[OBJ+1])bbreak(OBJ+1);
-//‰º
+//ä¸‹
 if(OBJ+10<BLOCK[STAGE].length){
  if(BREAK[OBJ+10])bbreak(OBJ+10);
  if(LEFT && BREAK[OBJ+9]) bbreak(OBJ+9);
@@ -538,7 +538,7 @@ setTimeout("visibility('bombimg_"+BOMBID+"',0)",800);
 
 musicplay('bombse');
 }
-//À²Ï°-------------------------------------------
+//ï¾€ï½²ï¾ï½°-------------------------------------------
 
 function timer() {
 
@@ -558,7 +558,7 @@ if(T_SEC<10) T_SEC='0'+T_SEC;
 
 document.getElementById('time').innerHTML=(T_MIN<1 && T_SEC<10 ? '<span style="color: #f00;">':'')+T_MIN+':'+T_SEC+(T_MIN<1 && T_SEC<10 ? '</span>':'');
 }
-//ºİÎŞ-------------------------------------------
+//ï½ºï¾ï¾ï¾-------------------------------------------
 
 function combo() {
 
@@ -581,7 +581,7 @@ MCOMBO=Math.max(COMBO,MCOMBO);
 }
 COMBO=0;
 }
-//½Ã°¼Ş¸Ø±---------------------------------------
+//ï½½ï¾ƒï½°ï½¼ï¾ï½¸ï¾˜ï½±---------------------------------------
 
 function sclear() {
 
@@ -598,7 +598,7 @@ CLEAR=Math.max(CLEAR,STAGE);
 
 with(document.getElementById('game')) {
 
-innerHTML+='<div id="sclear" style="background: #ccc; color: #000; filter:alpha(style=0,opacity=75); font-size: larger; height: 300px; position:absolute; left:150px; top:75px; width: 300px;"><p><big><big><b>STAGE'+(++STAGE)+' CLEAR!</b></big></big></p><table cellpadding="0" cellspacing="0" width="250"><tr><th width="100">SCORE</th><td></td><td align="right" width="50">'+SCORE+'</td></tr><tr><th>TIME</th><td>'+(Math.round(T_SEC/10)*10+T_MIN*60)+'sec.x10Ë</td><td align="right">'+(Math.round(T_SEC/10)*10+T_MIN*60)*10+'</td></tr><tr><th>BALLS</th><td><b>'+BALLS+'</b>x500Ë</td><td align="right">'+(BALLS*500)+'</td></tr><tr><th>MAXCOMBO</th><td><b>'+MCOMBO+'</b>x200Ë</td><td align="right">'+(MCOMBO*200)+'</td></tr><tr><th>BONUS</th><td align="right" colspan="2">'+BONUS+'</td></tr><tr style="font-size: larger;"><th>TOTAL</th><td align="right" colspan="2">'+(SCORE+=BONUS)+'</td></tr></table>'+(STAGE>=BLOCK.length ?'':'<button name="quit" onclick="clearInterval(KCT); menusetup()" style="font-size: 125%;">‚p‚t‚h‚s</button>')+'<button name="next" onclick="clearInterval(KCT);'+(STAGE>=BLOCK.length ?'staffroll()':'gamesetup()')+'" style="font-size: 125%;">‚m‚d‚w‚s</button></div>';
+innerHTML+='<div id="sclear" style="background: #ccc; color: #000; filter:alpha(style=0,opacity=75); font-size: larger; height: 300px; position:absolute; left:150px; top:75px; width: 300px;"><p><big><big><b>STAGE'+(++STAGE)+' CLEAR!</b></big></big></p><table cellpadding="0" cellspacing="0" width="250"><tr><th width="100">SCORE</th><td></td><td align="right" width="50">'+SCORE+'</td></tr><tr><th>TIME</th><td>'+(Math.round(T_SEC/10)*10+T_MIN*60)+'sec.x10â‡’</td><td align="right">'+(Math.round(T_SEC/10)*10+T_MIN*60)*10+'</td></tr><tr><th>BALLS</th><td><b>'+BALLS+'</b>x500â‡’</td><td align="right">'+(BALLS*500)+'</td></tr><tr><th>MAXCOMBO</th><td><b>'+MCOMBO+'</b>x200â‡’</td><td align="right">'+(MCOMBO*200)+'</td></tr><tr><th>BONUS</th><td align="right" colspan="2">'+BONUS+'</td></tr><tr style="font-size: larger;"><th>TOTAL</th><td align="right" colspan="2">'+(SCORE+=BONUS)+'</td></tr></table>'+(STAGE>=BLOCK.length ?'':'<button name="quit" onclick="clearInterval(KCT); menusetup()" style="font-size: 125%;">ï¼±ï¼µï¼©ï¼´</button>')+'<button name="next" onclick="clearInterval(KCT);'+(STAGE>=BLOCK.length ?'staffroll()':'gamesetup()')+'" style="font-size: 125%;">ï¼®ï¼¥ï¼¸ï¼´</button></div>';
 }
 quit=document.getElementsByName('quit')[0];
 next=document.getElementsByName('next')[0];
@@ -611,7 +611,7 @@ if(STAGE<BLOCK.length && KEYCODE==37)quit.focus();
 else if(KEYCODE==39)next.focus();
 },50);
 }
-//ÎŞ°ÙÛ½/¹Ş°Ñµ°ÊŞ°-------------------------------
+//ï¾ï¾ï½°ï¾™ï¾›ï½½/ï½¹ï¾ï½°ï¾‘ï½µï½°ï¾Šï¾ï½°-------------------------------
 
 function balllost() {
 
@@ -638,7 +638,7 @@ SPEEDY=10;
 BMT=setInterval('padmove()',50);
 },2000);
 }
-//¹Ş°Ñµ°ÊŞ°
+//ï½¹ï¾ï½°ï¾‘ï½µï½°ï¾Šï¾ï½°
 function gameover() {
 
 BALLS=3;
@@ -646,7 +646,7 @@ BALLS=3;
 clearInterval(BMT);
 clearInterval(TIM);
 
-document.getElementById('game').innerHTML+='<div id="gameover" style="background: #ccc; color: #000; filter:alpha(style=0,opacity=75); font-size: larger; height: 300px; position: absolute; left: 150px; top: 75px; width: 300px;"><p><big><big><b>GAME OVER!</b></big></big></p><p style="width: 150px;">SCORE:'+SCORE+'</p><br />CONTINUE?<br /><button name="yes" onclick="clearInterval(KCT); go_continue()" style="font-size: 125%;">‚x‚d‚r</button>@<button name="no" onclick="clearInterval(KCT); SCORE=0; menusetup()" style="font-size: 125%;">‚m@‚n</button></div>';
+document.getElementById('game').innerHTML+='<div id="gameover" style="background: #ccc; color: #000; filter:alpha(style=0,opacity=75); font-size: larger; height: 300px; position: absolute; left: 150px; top: 75px; width: 300px;"><p><big><big><b>GAME OVER!</b></big></big></p><p style="width: 150px;">SCORE:'+SCORE+'</p><br />CONTINUE?<br /><button name="yes" onclick="clearInterval(KCT); go_continue()" style="font-size: 125%;">ï¼¹ï¼¥ï¼³</button>ã€€<button name="no" onclick="clearInterval(KCT); SCORE=0; menusetup()" style="font-size: 125%;">ï¼®ã€€ï¼¯</button></div>';
 yes=document.getElementsByName('yes')[0];
 no=document.getElementsByName('no')[0];
 
@@ -656,21 +656,21 @@ KCT=setInterval("if(KEYCODE==37)yes.focus(); else if(KEYCODE==39)no.focus();",50
 musicstop();
 musicplay('game_over',1);
 }
-//ºİÃ¨Æ­°----------------------------------------
+//ï½ºï¾ï¾ƒï½¨ï¾†ï½­ï½°----------------------------------------
 
 function go_continue() {
 
 SCORE=Math.floor(Math.floor(SCORE/2)/10)*10+Math.min(SCORE%10+1,9);
 gamesetup();
 }
-//½À¯ÌÛ°Ù----------------------------------------
+//ï½½ï¾€ï½¯ï¾Œï¾›ï½°ï¾™----------------------------------------
 
 function staffroll() {
 
 STAGE=0;
 SRID =0;
 
-document.getElementById('game').innerHTML='<p><img alt="ƒuƒƒbƒN•ö‚µ" src="img/blockbreak/logo.gif" /></p><h1>STAFFROLL</h1><div id="sr"><h2>T-GAME</h2></div>';
+document.getElementById('game').innerHTML='<p><img alt="ãƒ–ãƒ­ãƒƒã‚¯å´©ã—" src="img/blockbreak/logo.gif" /></p><h1>STAFFROLL</h1><div id="sr"><h2>T-GAME</h2></div>';
 
 SRT=setInterval(function(){
 document.getElementById('sr').innerHTML=STAFF[SRID];
@@ -685,13 +685,13 @@ musicplay('srbgm',1);
 }
 
 
-//Û°ÄŞ-------------------------------------------
+//ï¾›ï½°ï¾„ï¾-------------------------------------------
 
 function load(){
 
 var COOKIE=document.cookie;
 
-//IE4‘Îô
+//IE4å¯¾ç­–
 if(COOKIE.charAt(COOKIE.length-1)!=';')COOKIE+=';';
 
 COOKIE=COOKIE.substring(COOKIE.indexOf('BLOCKBREAK='),COOKIE.length);
@@ -699,14 +699,14 @@ COOKIE=COOKIE.substring(0,COOKIE.indexOf(';')+1);
 eval(unescape(COOKIE));
 }
 
-//¾°ÌŞ-------------------------------------------
+//ï½¾ï½°ï¾Œï¾-------------------------------------------
 
 function save() {
 document.cookie="BLOCKBREAK="+escape("SCORE="+SCORE+";BALLS="+BALLS+";CLEAR="+CLEAR+";")+"; expires=Thu, 1-Jan-2030 00:00:00 GMT; domain=.github.io; path=/;";
 }
 
 function pause() {
- if(confirm('-----‚o‚`‚t‚r‚d-----\nƒƒjƒ…[‚É–ß‚è‚Ü‚·‚©')) {
+ if(confirm('-----ï¼°ï¼¡ï¼µï¼³ï¼¥-----\nãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«æˆ»ã‚Šã¾ã™ã‹')) {
 
  clearInterval(BMT);
  clearInterval(TIM);
@@ -714,7 +714,7 @@ function pause() {
  }
 }
 
-//‰Šú‰»-----------------------------------------
+//åˆæœŸåŒ–-----------------------------------------
 
 load();
 
