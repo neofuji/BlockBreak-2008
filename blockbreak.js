@@ -702,7 +702,7 @@ eval(unescape(COOKIE));
 //ｾｰﾌﾞ-------------------------------------------
 
 function save() {
-document.cookie="BLOCKBREAK="+escape("SCORE="+SCORE+";BALLS="+BALLS+";CLEAR="+CLEAR+";");
+document.cookie="BLOCKBREAK="+escape("SCORE="+SCORE+";BALLS="+BALLS+";CLEAR="+CLEAR+";")+"; max-age=60*60*24*365";
 }
 
 function pause() {
